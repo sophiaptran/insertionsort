@@ -1,0 +1,47 @@
+// ⇩  ⇩  ⇩  ⇩  ⇩  ⇩  ⇩  ⇩  ⇩  ⇩  ⇩  ⇩  ⇩  ⇩  ⇩  ⇩  ⇩  ⇩  ⇩  ⇩  ⇩  ⇩  ⇩  ⇩  ⇩  ⇩  ⇩  ⇩  ⇩  ⇩  ⇩  ⇩  ⇩  ⇩  ⇩  ⇩  ⇩  ⇩  ⇩
+// DO NOT ALTER THE TEXT BETWEEN THESE LINES =========={M{E{R{L{I{N{1}N}I}L}R}E}M}=====================================
+let unsortedStrings = ["paper", "tree", "apple", "book", "sun"]
+// DO NOT ALTER THE TEXT BETWEEN THESE LINES =========={M{E{R{L{I{N{1}N}I}L}R}E}M}=====================================
+// ⇧  ⇧  ⇧  ⇧  ⇧  ⇧  ⇧  ⇧  ⇧  ⇧  ⇧  ⇧  ⇧  ⇧  ⇧  ⇧  ⇧  ⇧  ⇧  ⇧  ⇧  ⇧  ⇧  ⇧  ⇧  ⇧  ⇧  ⇧  ⇧  ⇧  ⇧  ⇧  ⇧  ⇧  ⇧  ⇧  ⇧  ⇧  ⇧
+
+
+// Add your code below:
+
+var tempArray = unsortedStrings
+
+var passCount = 0
+var tempCount = 0
+var totalCount = 0
+
+func swap(strings: inout [Int], firstIndex: Int, secondIndex: Int) {
+    let temp = strings[firstIndex]
+    integers[firstIndex] = integers[secondIndex]
+    integers[secondIndex] = temp
+
+    tempCount += 1
+}
+
+func sort (integers: inout[Int]) {
+    for i in 0..<integers.count {
+        var swapIndex = i
+
+        tempCount = 0
+
+        while swapIndex > 0 {
+            if integers[swapIndex] < integers[swapIndex - 1] {
+                swap(integers: &integers, firstIndex: swapIndex, secondIndex: swapIndex - 1)
+                
+                swapIndex -= 1
+                totalCount += 1
+            }
+            
+            else  {
+                break
+            }
+        }
+        print("Pass: \(passCount), Swaps: \(tempCount)/\(totalCount), Array: \(integers)")
+
+        passCount += 1
+    }   
+}
+sort(integers: &tempArray)
